@@ -1,0 +1,45 @@
+.containerSignIn {
+    justify-content: center;
+}
+
+.signIn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 494px;
+    height: 475px;
+    padding: 32px 96px 68px 96px;
+
+    background-color: #44444d;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+.signIn img {
+    height: 68px;
+    width: auto;
+}
+
+.signIn form {
+    margin-top: 60px;
+}
+
+.signIn form input {
+    margin-bottom: 16px;
+}
+
+.signIn form a {
+    margin-left: 4px;
+}
+
+.signIn form span,
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 12px;
+}
+
+.signIn form button {
+    margin-top: 60px;
+}
