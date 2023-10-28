@@ -1,12 +1,23 @@
 import './styles.css';
 import Logo from '../../assets/logo.svg'
-import { Link } from 'react-router-dom';
-import { FormEvent, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { FormEvent, useEffect, useState } from 'react';
 import api from '../../services/api';
+import { useAuth } from '../../hooks/useAuth';
 
 function SignIn() {
+  const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const { handleGetToken, handleAddToken } = useAuth()
+
+  useEffect(() => {
+    const token = handleGetToken()
+
+    if (token) {
+      navigate('/main')
+    }
+  }, [])
 
   async function handleSubmit(event: FormEvent) {
     event.preventDefault()
@@ -20,7 +31,9 @@ function SignIn() {
         email,
         password
       })
-      console.log(response);
+      const { accessToken } = response.data
+      handleAddToken(accessToken)
+      navigate('/main')
 
     } catch (erro) {
       console.log(erro);
