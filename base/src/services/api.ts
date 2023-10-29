@@ -7,3 +7,8 @@ export default axios.create({
         "Content-Type": 'application/json'
     }
 })
+
+export async function listTeachers() {
+    const response = await axios.get('/teachers')
+    return response.data
+}

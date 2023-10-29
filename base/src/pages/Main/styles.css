@@ -1,0 +1,12 @@
+.mainTeachers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    width: 100%;
+    max-width: 1208px;
+
+    margin-top: 72px;
+}

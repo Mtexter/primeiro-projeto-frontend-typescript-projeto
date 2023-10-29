@@ -2,6 +2,7 @@ import { Routes, Route, Outlet, Navigate } from 'react-router-dom'
 import Main from './pages/Main'
 import SignIn from './pages/SignIn'
 import { useAuth } from './hooks/useAuth'
+import TeacherDetails from './pages/TeacherDetails'
 
 type Props = {
     redirectTo: string
@@ -22,6 +23,7 @@ function MainRoutes() {
 
             <Route element={<ProtectedRoutes redirectTo='/' />}>
                 <Route path='/main' element={<Main />} />
+                <Route path='/teacherDetail' element={<TeacherDetails />} />
             </Route>
         </Routes>
     )

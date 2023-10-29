@@ -17,7 +17,7 @@ function SignIn() {
     if (token) {
       navigate('/main')
     }
-  }, [])
+  })
 
   async function handleSubmit(event: FormEvent) {
     event.preventDefault()
